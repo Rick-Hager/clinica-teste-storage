@@ -1,0 +1,370 @@
+---
+const services = [
+  { label: 'Consulta de Clínica Geral',   href: '/servicos/consulta-geral' },
+  { label: 'Check-up Preventivo',          href: '/servicos/check-up-preventivo' },
+  { label: 'Telemedicina',                 href: '/servicos/telemedicina' },
+  { label: 'Acompanhamento de Saúde',      href: '/servicos/acompanhamento' },
+  { label: 'Exames e Laudos',              href: '/servicos/exames-e-laudos' },
+];
+---
+
+<header class="header" role="banner">
+  <div class="header__inner container">
+
+    <!-- Logo -->
+    <a href="/" class="logo" aria-label="Clínica Teste Storage — Ir para a página inicial">
+      <span class="logo__icon" aria-hidden="true">
+        <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="36" height="36" rx="9" fill="#1B4F8A"/>
+          <path d="M18 10v16M10 18h16" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round"/>
+        </svg>
+      </span>
+      <span class="logo__text">
+        <span class="logo__name">Clínica Teste Storage</span>
+        <span class="logo__tagline">Cuidado que transforma</span>
+      </span>
+    </a>
+
+    <!-- Nav desktop -->
+    <nav class="header__nav" id="main-nav" role="navigation" aria-label="Navegação principal">
+      <ul class="nav__list">
+        <li><a href="/" class="nav-link">Início</a></li>
+        <li><a href="/sobre" class="nav-link">Sobre</a></li>
+        <li class="nav__item--has-dropdown">
+          <button
+            class="nav-link nav-link--btn"
+            id="services-btn"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+            Serviços
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="chevron">
+              <polyline points="6 9 12 15 18 9"/>
+            </svg>
+          </button>
+          <ul class="nav__dropdown" id="services-dropdown" role="list">
+            {services.map(s => (
+              <li>
+                <a href={s.href} class="dropdown__link">{s.label}</a>
+              </li>
+            ))}
+          </ul>
+        </li>
+        <li><a href="/equipe" class="nav-link">Equipe</a></li>
+        <li><a href="/blog" class="nav-link">Blog</a></li>
+        <li><a href="/contato" class="nav-link">Contato</a></li>
+      </ul>
+    </nav>
+
+    <!-- Ações -->
+    <div class="header__actions">
+      <a href="/contato" class="btn btn-primary hide-on-mobile">Agendar Consulta</a>
+      <button
+        class="hamburger"
+        id="hamburger-btn"
+        aria-label="Abrir menu"
+        aria-expanded="false"
+        aria-controls="main-nav"
+      >
+        <span class="hamburger__bar"></span>
+        <span class="hamburger__bar"></span>
+        <span class="hamburger__bar"></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Overlay mobile -->
+  <div class="nav-overlay" id="nav-overlay" aria-hidden="true"></div>
+</header>
+
+<style>
+  .header {
+    position: sticky;
+    top: 0;
+    z-index: var(--z-sticky);
+    background: var(--color-white);
+    box-shadow: var(--shadow-sm);
+  }
+  .header__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 72px;
+    gap: var(--space-6);
+  }
+
+  /* Logo */
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    flex-shrink: 0;
+    text-decoration: none;
+  }
+  .logo__text { display: flex; flex-direction: column; }
+  .logo__name {
+    font-size: 1rem;
+    font-weight: var(--font-bold);
+    color: var(--color-primary);
+    line-height: 1.2;
+  }
+  .logo__tagline {
+    font-size: var(--text-caption);
+    color: var(--color-gray-600);
+    line-height: 1.2;
+  }
+
+  /* Nav */
+  .header__nav { flex: 1; display: flex; justify-content: center; }
+  .nav__list {
+    display: flex;
+    align-items: center;
+    gap: var(--space-1);
+  }
+  .nav-link,
+  .nav-link--btn {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-1);
+    padding: var(--space-2) var(--space-3);
+    font-size: var(--text-nav);
+    font-weight: var(--font-medium);
+    color: var(--color-gray-600);
+    text-decoration: none;
+    border-radius: var(--radius-sm);
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition:
+      color            var(--duration-fast) var(--ease-out),
+      background-color var(--duration-fast) var(--ease-out);
+    white-space: nowrap;
+  }
+  .nav-link:hover,
+  .nav-link--btn:hover,
+  .nav-link:focus-visible,
+  .nav-link--btn:focus-visible {
+    color: var(--color-primary);
+    background-color: var(--color-primary-light);
+    outline: none;
+  }
+  .chevron {
+    transition: transform var(--duration-fast) var(--ease-out);
+  }
+  .nav-link--btn[aria-expanded="true"] .chevron {
+    transform: rotate(180deg);
+  }
+
+  /* Dropdown */
+  .nav__item--has-dropdown { position: relative; }
+  .nav__dropdown {
+    position: absolute;
+    top: calc(100% + var(--space-2));
+    left: 50%;
+    transform: translateX(-50%) translateY(-8px);
+    background: var(--color-white);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--color-gray-100);
+    padding: var(--space-2);
+    min-width: 240px;
+    opacity: 0;
+    visibility: hidden;
+    transition:
+      opacity    var(--duration-slow) var(--ease-out),
+      transform  var(--duration-slow) var(--ease-out),
+      visibility var(--duration-slow);
+    z-index: var(--z-dropdown);
+  }
+  .nav__dropdown.is-open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+  }
+  .dropdown__link {
+    display: block;
+    padding: var(--space-3) var(--space-4);
+    font-size: var(--text-body-sm);
+    font-weight: var(--font-medium);
+    color: var(--color-gray-600);
+    border-radius: var(--radius-sm);
+    transition:
+      color            var(--duration-fast) var(--ease-out),
+      background-color var(--duration-fast) var(--ease-out);
+  }
+  .dropdown__link:hover {
+    color: var(--color-primary);
+    background-color: var(--color-primary-light);
+  }
+
+  /* Hamburger */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 44px;
+    height: 44px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    border-radius: var(--radius-sm);
+    padding: var(--space-2);
+  }
+  .hamburger__bar {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: var(--color-gray-900);
+    border-radius: 2px;
+    transition:
+      transform var(--duration-normal) var(--ease-in-out),
+      opacity   var(--duration-normal) var(--ease-in-out);
+  }
+  .hamburger.is-open .hamburger__bar:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .hamburger.is-open .hamburger__bar:nth-child(2) { opacity: 0; }
+  .hamburger.is-open .hamburger__bar:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  /* Overlay */
+  .nav-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(26,32,44,0.55);
+    z-index: calc(var(--z-sticky) - 1);
+  }
+  .nav-overlay.is-open { display: block; }
+
+  /* Header actions */
+  .header__actions { display: flex; align-items: center; gap: var(--space-3); flex-shrink: 0; }
+
+  /* === MOBILE === */
+  @media (max-width: 1024px) {
+    .hamburger { display: flex; }
+    .header__nav {
+      position: fixed;
+      top: 72px;
+      left: 0;
+      width: min(320px, 85vw);
+      height: calc(100dvh - 72px);
+      background: var(--color-white);
+      box-shadow: var(--shadow-xl);
+      padding: var(--space-6) var(--space-4);
+      overflow-y: auto;
+      transform: translateX(-100%);
+      transition: transform var(--duration-slow) var(--ease-out);
+      z-index: var(--z-sticky);
+      justify-content: flex-start;
+    }
+    .header__nav.is-open { transform: translateX(0); }
+    .nav__list {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: var(--space-1);
+      width: 100%;
+    }
+    .nav__list > li { width: 100%; }
+    .nav-link,
+    .nav-link--btn {
+      width: 100%;
+      padding: var(--space-3) var(--space-4);
+      font-size: var(--text-body);
+      justify-content: space-between;
+    }
+    .nav__dropdown {
+      position: static;
+      transform: none;
+      box-shadow: none;
+      border: none;
+      border-left: 2px solid var(--color-gray-100);
+      border-radius: 0;
+      margin-left: var(--space-4);
+      margin-top: var(--space-1);
+      padding: var(--space-1) 0;
+      background: transparent;
+      min-width: unset;
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      visibility: hidden;
+      transition:
+        max-height var(--duration-slow) var(--ease-out),
+        opacity    var(--duration-slow) var(--ease-out);
+    }
+    .nav__dropdown.is-open {
+      max-height: 400px;
+      opacity: 1;
+      visibility: visible;
+      transform: none;
+    }
+    .mobile-cta {
+      margin-top: var(--space-6);
+      padding-top: var(--space-6);
+      border-top: 1px solid var(--color-gray-100);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-3);
+      width: 100%;
+    }
+    .mobile-cta .btn { width: 100%; justify-content: center; }
+  }
+</style>
+
+<script>
+  const hamburgerBtn = document.getElementById('hamburger-btn');
+  const mainNav = document.getElementById('main-nav');
+  const navOverlay = document.getElementById('nav-overlay');
+  const servicesBtn = document.getElementById('services-btn');
+  const servicesDropdown = document.getElementById('services-dropdown');
+
+  function openNav() {
+    hamburgerBtn.classList.add('is-open');
+    mainNav.classList.add('is-open');
+    navOverlay.classList.add('is-open');
+    hamburgerBtn.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';
+
+    // Add mobile CTA if not already present
+    if (!mainNav.querySelector('.mobile-cta')) {
+      const cta = document.createElement('div');
+      cta.className = 'mobile-cta';
+      cta.innerHTML = '<a href="/contato" class="btn btn-primary">Agendar Consulta</a><a href="https://wa.me/5511999999999" class="btn btn-whatsapp" target="_blank" rel="noopener">WhatsApp</a>';
+      mainNav.appendChild(cta);
+    }
+  }
+
+  function closeNav() {
+    hamburgerBtn.classList.remove('is-open');
+    mainNav.classList.remove('is-open');
+    navOverlay.classList.remove('is-open');
+    hamburgerBtn.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  }
+
+  hamburgerBtn.addEventListener('click', () => {
+    mainNav.classList.contains('is-open') ? closeNav() : openNav();
+  });
+  navOverlay.addEventListener('click', closeNav);
+
+  // Services dropdown
+  servicesBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const isOpen = servicesDropdown.classList.toggle('is-open');
+    servicesBtn.setAttribute('aria-expanded', String(isOpen));
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!servicesBtn.contains(e.target) && !servicesDropdown.contains(e.target)) {
+      servicesDropdown.classList.remove('is-open');
+      servicesBtn.setAttribute('aria-expanded', 'false');
+    }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      servicesDropdown.classList.remove('is-open');
+      servicesBtn.setAttribute('aria-expanded', 'false');
+      closeNav();
+    }
+  });
+</script>

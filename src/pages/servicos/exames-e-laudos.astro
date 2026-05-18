@@ -1,0 +1,52 @@
+---
+import Base from '../../layouts/Base.astro';
+import PageHero from '../../components/PageHero.astro';
+import CTABanner from '../../components/CTABanner.astro';
+---
+
+<Base
+  title="Exames e Laudos — Clínica Teste Storage | São Paulo"
+  description="Solicitação e acompanhamento de exames com orientação médica na Clínica Teste Storage em São Paulo. Agende sua consulta."
+>
+  <PageHero
+    overline="Serviço"
+    title="Exames e Laudos"
+    subtitle="Acompanhamento especializado na solicitação, interpretação e gestão dos seus resultados de exames."
+  />
+
+  <section class="section">
+    <div class="container">
+      <div class="notice-banner">
+        <strong>Página em complementação:</strong> as informações detalhadas sobre os exames disponíveis na clínica e parceiros de encaminhamento serão adicionadas em breve. Entre em contato para saber mais.
+      </div>
+
+      <div class="exams-content">
+        <div class="exams-text">
+          <h2>Como funciona</h2>
+          <p>Nossa equipe médica realiza a solicitação dos exames adequados ao seu perfil clínico, indica os melhores parceiros de diagnóstico e acompanha seus resultados com orientações claras sobre os próximos passos.</p>
+          <p>Você não precisa interpretar seus exames sozinho. Estamos aqui para explicar o que cada resultado significa e como ele orienta o seu tratamento.</p>
+          <a href="/contato" class="btn btn-primary" style="margin-top: var(--space-6); display: inline-flex;">Agendar Consulta para Solicitação de Exames</a>
+        </div>
+        <div class="exams-placeholder" aria-hidden="true"></div>
+      </div>
+    </div>
+  </section>
+
+  <CTABanner
+    title="Precisando de orientação sobre exames?"
+    text="Agende uma consulta e receba a solicitação e interpretação dos seus exames com acompanhamento médico especializado."
+    primaryLabel="Agendar Consulta"
+    primaryHref="/contato"
+    secondaryLabel="Falar pelo WhatsApp"
+    secondaryHref="https://wa.me/5511999999999"
+  />
+</Base>
+
+<style>
+  .exams-content { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-12); align-items: center; }
+  .exams-text { display: flex; flex-direction: column; gap: var(--space-5); }
+  .exams-text h2 { font-family: var(--font-display); font-size: var(--text-h2); color: var(--color-primary); }
+  .exams-text p { color: var(--color-gray-600); line-height: var(--leading-relaxed); }
+  .exams-placeholder { min-height: 320px; background: var(--gradient-soft); border-radius: var(--radius-xl); border: 2px dashed var(--color-gray-400); }
+  @media (max-width: 768px) { .exams-content { grid-template-columns: 1fr; } .exams-placeholder { display: none; } }
+</style>

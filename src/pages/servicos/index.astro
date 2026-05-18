@@ -1,0 +1,50 @@
+---
+import Base from '../../layouts/Base.astro';
+import PageHero from '../../components/PageHero.astro';
+import ServiceCard from '../../components/ServiceCard.astro';
+import CTABanner from '../../components/CTABanner.astro';
+
+const iconSteth = `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.8 2.3A.3.3 0 1 0 5 2H4a2 2 0 0 0-2 2v5a6 6 0 0 0 6 6v0a6 6 0 0 0 6-6V4a2 2 0 0 0-2-2h-1a.2.2 0 1 0 .3.3"/><circle cx="18" cy="17" r="3"/></svg>`;
+const iconCal = `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>`;
+const iconPhone = `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>`;
+const iconHeart = `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>`;
+const iconFile = `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="15" x2="15" y2="15"/></svg>`;
+
+const services = [
+  { icon: iconSteth, title: 'Consulta de Clínica Geral',  text: 'Avaliação completa do seu estado de saúde, diagnóstico de condições agudas e crônicas, solicitação de exames e encaminhamentos quando necessário.', href: '/servicos/consulta-geral' },
+  { icon: iconCal,   title: 'Check-up Preventivo',        text: 'Programa personalizado por faixa etária e histórico clínico. Detecte precocemente condições que, tratadas cedo, têm muito mais eficácia.', href: '/servicos/check-up-preventivo' },
+  { icon: iconPhone, title: 'Telemedicina',               text: 'Consultas de retorno e acompanhamento no conforto da sua casa. Segura, regularizada e tão eficaz quanto o presencial para os casos indicados.', href: '/servicos/telemedicina' },
+  { icon: iconHeart, title: 'Acompanhamento de Saúde',    text: 'Monitoramento contínuo de condições crônicas como hipertensão, diabetes e dislipidemia. Cuidado longitudinal que faz diferença no longo prazo.', href: '/servicos/acompanhamento' },
+  { icon: iconFile,  title: 'Exames e Laudos',            text: 'Solicitação e acompanhamento de exames com orientação médica especializada. Encaminhamentos para parceiros de referência quando necessário.', href: '/servicos/exames-e-laudos' },
+];
+---
+
+<Base
+  title="Serviços Médicos — Clínica Teste Storage | São Paulo"
+  description="Consulta de clínica geral, check-up preventivo, telemedicina e acompanhamento de saúde em São Paulo. Agende online."
+>
+  <PageHero
+    overline="Nossos serviços"
+    title="Serviços médicos pensados para o seu bem-estar"
+    subtitle="Da consulta de rotina ao acompanhamento de condições crônicas, oferecemos cuidados médicos completos para você e sua família — com a conveniência de agendar online a qualquer hora."
+  />
+
+  <section class="section">
+    <div class="container">
+      <div class="grid-3">
+        {services.map(s => (
+          <ServiceCard icon={s.icon} title={s.title} text={s.text} href={s.href} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CTABanner
+    title="Pronto para cuidar da sua saúde?"
+    text="Agende sua consulta agora e dê o primeiro passo para um acompanhamento médico de qualidade."
+    primaryLabel="Agendar Consulta"
+    primaryHref="/contato"
+    secondaryLabel="Falar pelo WhatsApp"
+    secondaryHref="https://wa.me/5511999999999"
+  />
+</Base>

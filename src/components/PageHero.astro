@@ -1,0 +1,62 @@
+---
+export interface Props {
+  overline?: string;
+  title: string;
+  subtitle?: string;
+}
+const { overline, title, subtitle } = Astro.props;
+---
+<section class="page-hero" aria-labelledby="page-hero-title">
+  <div class="page-hero__decoration" aria-hidden="true"></div>
+  <div class="container page-hero__content">
+    {overline && <span class="overline">{overline}</span>}
+    <h1 id="page-hero-title" class="page-hero__title">{title}</h1>
+    {subtitle && <p class="page-hero__subtitle">{subtitle}</p>}
+  </div>
+</section>
+
+<style>
+  .page-hero {
+    position: relative;
+    background: var(--gradient-hero);
+    color: var(--color-white);
+    padding: var(--space-20) 0 var(--space-16);
+    overflow: hidden;
+  }
+  .page-hero__decoration {
+    position: absolute;
+    right: -120px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 500px;
+    height: 500px;
+    border-radius: var(--radius-full);
+    background: radial-gradient(circle, rgba(52,160,164,0.18) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .page-hero__content {
+    position: relative;
+    z-index: 1;
+    max-width: 680px;
+  }
+  .page-hero .overline { color: var(--color-accent); }
+  .page-hero__title {
+    font-family: var(--font-display);
+    font-size: var(--text-h1);
+    font-weight: var(--font-bold);
+    color: var(--color-white);
+    line-height: var(--leading-snug);
+    letter-spacing: var(--tracking-tight);
+    margin-bottom: var(--space-4);
+  }
+  .page-hero__subtitle {
+    font-size: var(--text-body-lg);
+    color: rgba(255,255,255,0.82);
+    line-height: var(--leading-loose);
+    max-width: 580px;
+  }
+  @media (max-width: 768px) {
+    .page-hero { padding: var(--space-12) 0; }
+    .page-hero__decoration { display: none; }
+  }
+</style>

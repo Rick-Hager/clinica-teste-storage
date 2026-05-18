@@ -1,0 +1,102 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHero from '../components/PageHero.astro';
+---
+
+<Base
+  title="Política de Privacidade — Clínica Teste Storage"
+  description="Política de Privacidade da Clínica Teste Storage, em conformidade com a LGPD (Lei nº 13.709/2018)."
+>
+  <PageHero
+    overline="Legal"
+    title="Política de Privacidade"
+  />
+
+  <section class="section">
+    <div class="container">
+      <div class="legal-content">
+
+        <div class="notice-banner">
+          <strong>Documento em revisão:</strong> Esta política está em processo de finalização com os dados reais da clínica. Entre em contato pelo e-mail indicado abaixo para mais informações.
+        </div>
+
+        <p class="legal-updated"><strong>Última atualização:</strong> <span class="placeholder-text">_____</span></p>
+
+        <h2>1. Quem somos</h2>
+        <p>A Clínica Teste Storage, <span class="placeholder-text">_____</span> (razão social), inscrita no CNPJ sob nº <span class="placeholder-text">_____</span>, com sede em <span class="placeholder-text">_____</span>, é responsável pelo tratamento dos seus dados pessoais coletados por meio deste site.</p>
+
+        <h2>2. Quais dados coletamos</h2>
+        <p>Coletamos dados pessoais que você fornece voluntariamente ao preencher formulários de contato ou agendamento: nome, telefone, e-mail e informações de saúde necessárias para o atendimento.</p>
+        <p>Também coletamos dados de navegação (via cookies e Google Analytics 4) para fins de análise de desempenho do site. Esses dados são anonimizados.</p>
+
+        <h2>3. Como usamos seus dados</h2>
+        <ul>
+          <li>Para responder às suas mensagens e realizar agendamentos.</li>
+          <li>Para enviar confirmações e lembretes de consulta (via WhatsApp).</li>
+          <li>Para cumprir obrigações legais (prontuário médico, Conselho Federal de Medicina).</li>
+          <li>Para análise e melhoria do site (dados anonimizados).</li>
+        </ul>
+
+        <h2>4. Com quem compartilhamos</h2>
+        <p>Seus dados não são vendidos. Podemos compartilhar com:</p>
+        <ul>
+          <li>Software de gestão médica adotado pela clínica (com DPA assinado).</li>
+          <li>Google (Analytics, Maps) — dados de navegação anonimizados.</li>
+          <li>Planos de saúde/convênios, quando necessário para faturamento.</li>
+        </ul>
+
+        <h2>5. Seus direitos (LGPD)</h2>
+        <p>Você tem direito a: confirmar a existência de tratamento; acessar seus dados; corrigir dados incompletos; solicitar anonimização, bloqueio ou eliminação; revogar o consentimento a qualquer momento.</p>
+        <p>Para exercer esses direitos, entre em contato pelo e-mail: <span class="placeholder-text">_____</span></p>
+
+        <h2>6. Segurança</h2>
+        <p>Adotamos medidas técnicas e organizacionais para proteger seus dados contra acesso não autorizado, perda ou divulgação indevida.</p>
+
+        <h2>7. Alterações</h2>
+        <p>Esta política pode ser atualizada. A versão vigente estará sempre disponível nesta página com a data de última atualização.</p>
+
+        <div class="legal-contact">
+          <h3>Dúvidas sobre privacidade?</h3>
+          <p>Entre em contato com nossa equipe pelo e-mail <span class="placeholder-text">_____</span> ou pelo <a href="/contato">formulário de contato</a>.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .legal-content {
+    max-width: 760px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+  }
+  .legal-updated { font-size: var(--text-body-sm); color: var(--color-gray-600); }
+  .legal-content h2 {
+    font-family: var(--font-display);
+    font-size: var(--text-h3);
+    color: var(--color-primary);
+    margin-top: var(--space-4);
+    margin-bottom: var(--space-2);
+  }
+  .legal-content p { color: var(--color-gray-600); line-height: var(--leading-relaxed); }
+  .legal-content ul {
+    color: var(--color-gray-600);
+    line-height: var(--leading-relaxed);
+    padding-left: var(--space-6);
+    list-style: disc;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+  .legal-contact {
+    background: var(--color-gray-100);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+    margin-top: var(--space-6);
+  }
+  .legal-contact h3 { font-size: var(--text-h4); font-weight: var(--font-semibold); color: var(--color-gray-900); margin-bottom: var(--space-2); }
+  .legal-contact a { color: var(--color-primary); text-decoration: underline; }
+</style>

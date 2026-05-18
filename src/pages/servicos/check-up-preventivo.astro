@@ -1,0 +1,111 @@
+---
+import Base from '../../layouts/Base.astro';
+import PageHero from '../../components/PageHero.astro';
+import CTABanner from '../../components/CTABanner.astro';
+---
+
+<Base
+  title="Check-up Preventivo — Clínica Teste Storage | São Paulo"
+  description="Programa de check-up preventivo personalizado em São Paulo. Detecte condições cedo, quando o tratamento é mais eficaz."
+>
+  <PageHero
+    overline="Serviço"
+    title="Check-up Preventivo"
+    subtitle="Cuide da sua saúde antes dos sintomas aparecerem. Um programa pensado para a sua faixa etária e histórico clínico."
+  />
+
+  <section class="section">
+    <div class="container service-layout">
+      <div class="service-body">
+
+        <div class="service-block">
+          <h2>O que é</h2>
+          <p>O check-up preventivo é um conjunto de avaliações e exames realizado periodicamente para identificar, de forma precoce, condições que muitas vezes não dão sintomas nas fases iniciais — como hipertensão, diabetes, dislipidemia e lesões pré-cancerígenas.</p>
+          <p>Detectadas cedo, essas condições têm tratamento mais eficaz, menos invasivo e com melhor prognóstico.</p>
+        </div>
+
+        <div class="service-block">
+          <h2>Para quem é indicado</h2>
+          <ul class="service-list">
+            <li>Adultos a partir de 30 anos sem queixas específicas</li>
+            <li>Pessoas com histórico familiar de doenças cardiovasculares, diabetes ou câncer</li>
+            <li>Profissionais com rotina estressante e pouco tempo para acompanhamento médico</li>
+            <li>Quem deseja ter um panorama completo e atualizado da sua saúde</li>
+          </ul>
+        </div>
+
+        <div class="service-block">
+          <h2>O que geralmente inclui</h2>
+          <div class="service-exams">
+            <p>Exemplos típicos: hemograma completo, glicemia, colesterol e frações, triglicerídeos, função renal e hepática, hormônios tireoidianos, exame físico completo, pressão arterial, IMC e avaliação de risco cardiovascular.</p>
+            <p class="placeholder-text">[ Lista detalhada dos exames incluídos no pacote da clínica — a preencher com o catálogo real de serviços. ]</p>
+          </div>
+        </div>
+
+        <div class="service-block">
+          <h2>Periodicidade recomendada</h2>
+          <div class="periodicity-grid">
+            <div class="periodicity-item">
+              <span class="periodicity-age">30–39 anos</span>
+              <span class="periodicity-freq">A cada 2 anos</span>
+            </div>
+            <div class="periodicity-item">
+              <span class="periodicity-age">40–59 anos</span>
+              <span class="periodicity-freq">Anualmente</span>
+            </div>
+            <div class="periodicity-item">
+              <span class="periodicity-age">60+ anos</span>
+              <span class="periodicity-freq">Anualmente ou conforme orientação médica</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <aside class="service-sidebar">
+        <div class="sidebar-card">
+          <h3>Agende seu Check-up</h3>
+          <p>Prevenir é sempre melhor — e mais econômico — do que tratar.</p>
+          <a href="/contato" class="btn btn-primary" style="width:100%;justify-content:center;">Agendar meu Check-up</a>
+          <a href="https://wa.me/5511999999999" class="btn btn-whatsapp" style="width:100%;justify-content:center;" target="_blank" rel="noopener">Chamar no WhatsApp</a>
+        </div>
+        <div class="sidebar-links">
+          <p class="sidebar-links__title">Outros serviços</p>
+          <a href="/servicos/consulta-geral">Consulta de Clínica Geral</a>
+          <a href="/servicos/telemedicina">Telemedicina</a>
+          <a href="/servicos/acompanhamento">Acompanhamento de Saúde</a>
+          <a href="/servicos/exames-e-laudos">Exames e Laudos</a>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <CTABanner
+    title="Prevenir é cuidar de verdade"
+    text="Agende seu check-up preventivo e tenha um panorama completo da sua saúde hoje."
+    primaryLabel="Agendar meu Check-up"
+    primaryHref="/contato"
+  />
+</Base>
+
+<style>
+  .service-layout { display: grid; grid-template-columns: 1fr 320px; gap: var(--space-12); align-items: flex-start; }
+  .service-body { display: flex; flex-direction: column; gap: var(--space-10); }
+  .service-block h2 { font-family: var(--font-display); font-size: var(--text-h3); color: var(--color-primary); margin-bottom: var(--space-4); }
+  .service-block p { color: var(--color-gray-600); line-height: var(--leading-relaxed); margin-bottom: var(--space-3); }
+  .service-list { color: var(--color-gray-600); line-height: var(--leading-relaxed); padding-left: var(--space-6); list-style: disc; display: flex; flex-direction: column; gap: var(--space-2); }
+  .service-exams { background: var(--color-gray-100); border-radius: var(--radius-lg); padding: var(--space-6); display: flex; flex-direction: column; gap: var(--space-3); }
+  .periodicity-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: var(--space-4); }
+  .periodicity-item { background: var(--color-primary-light); border-radius: var(--radius-md); padding: var(--space-4); display: flex; flex-direction: column; gap: var(--space-1); border-left: 3px solid var(--color-primary); }
+  .periodicity-age { font-weight: var(--font-bold); font-size: var(--text-body-sm); color: var(--color-primary); }
+  .periodicity-freq { font-size: var(--text-body-sm); color: var(--color-gray-600); }
+  .service-sidebar { position: sticky; top: 90px; display: flex; flex-direction: column; gap: var(--space-6); }
+  .sidebar-card { background: var(--color-white); border-radius: var(--radius-lg); padding: var(--space-6); box-shadow: var(--shadow-md); display: flex; flex-direction: column; gap: var(--space-4); border-top: 3px solid var(--color-primary); }
+  .sidebar-card h3 { font-size: var(--text-h4); font-weight: var(--font-semibold); color: var(--color-gray-900); }
+  .sidebar-card p { font-size: var(--text-body-sm); color: var(--color-gray-600); }
+  .sidebar-links { background: var(--color-gray-100); border-radius: var(--radius-lg); padding: var(--space-5); display: flex; flex-direction: column; gap: var(--space-2); }
+  .sidebar-links__title { font-size: var(--text-caption); font-weight: var(--font-bold); letter-spacing: var(--tracking-wider); text-transform: uppercase; color: var(--color-gray-600); margin-bottom: var(--space-2); }
+  .sidebar-links a { font-size: var(--text-body-sm); color: var(--color-primary); padding: var(--space-2) var(--space-3); border-radius: var(--radius-sm); transition: background-color var(--duration-fast) var(--ease-out); }
+  .sidebar-links a:hover { background-color: var(--color-primary-light); }
+  @media (max-width: 900px) { .service-layout { grid-template-columns: 1fr; } .service-sidebar { position: static; } }
+</style>

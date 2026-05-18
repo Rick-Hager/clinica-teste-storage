@@ -1,0 +1,232 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHero from '../components/PageHero.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import CTABanner from '../components/CTABanner.astro';
+---
+
+<Base
+  title="Sobre Nós — Clínica Teste Storage | São Paulo"
+  description="Conheça a história, a equipe e os valores da Clínica Teste Storage. Medicina humanizada com excelência técnica em São Paulo."
+>
+
+  <PageHero
+    overline="Quem somos"
+    title="Uma clínica construída sobre a convicção de que cuidar bem faz diferença"
+    subtitle="A Clínica Teste Storage nasceu da convicção de que medicina de qualidade e atendimento humanizado não são excludentes — são inseparáveis."
+  />
+
+  <!-- Nossa História -->
+  <section class="section">
+    <div class="container">
+      <div class="grid-2">
+        <div class="about-text">
+          <SectionHeading overline="Nossa história" title="De onde viemos, para onde vamos" />
+          <p>A Clínica Teste Storage nasceu da convicção de que medicina de qualidade e atendimento humanizado não são excludentes — são inseparáveis.</p>
+          <p class="placeholder-text about-placeholder">[ História real da clínica: quando foi fundada, por quem, motivação, trajetória e marcos importantes serão adicionados aqui. ]</p>
+          <p>Ao longo desses anos, construímos uma estrutura pensada para o bem-estar do paciente: desde a recepção acolhedora até os equipamentos atualizados, cada detalhe reflete nosso compromisso com a sua saúde.</p>
+        </div>
+        <div class="about-image" aria-hidden="true">
+          <div class="about-image__placeholder"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Missão, Visão e Valores -->
+  <section class="section section--alt" aria-labelledby="mvv-title">
+    <div class="container">
+      <SectionHeading overline="Propósito" title="O que nos guia" center={true} />
+      <div class="mvv-grid">
+        <div class="mvv-card">
+          <div class="mvv-card__icon" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+          </div>
+          <h3 class="mvv-card__label">Missão</h3>
+          <p>Oferecer cuidado médico de excelência com atenção humanizada, tornando a saúde acessível, clara e conveniente para cada pessoa que nos procura.</p>
+        </div>
+        <div class="mvv-card">
+          <div class="mvv-card__icon" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+          </div>
+          <h3 class="mvv-card__label">Visão</h3>
+          <p>Ser a clínica de referência na nossa região, reconhecida pela qualidade técnica dos nossos profissionais e pela experiência de cuidado que transforma a relação das pessoas com a própria saúde.</p>
+        </div>
+        <div class="mvv-card">
+          <div class="mvv-card__icon" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <h3 class="mvv-card__label">Valores</h3>
+          <ul class="mvv-values">
+            <li><strong>Excelência técnica</strong> — protocolos baseados em evidências.</li>
+            <li><strong>Humanização</strong> — cada paciente é uma pessoa única.</li>
+            <li><strong>Clareza</strong> — linguagem que você entende.</li>
+            <li><strong>Ética e confiança</strong> — seguimos o Código de Ética Médica.</li>
+            <li><strong>Conveniência</strong> — valorizamos o seu tempo.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Nossa Equipe (placeholder) -->
+  <section class="section" aria-labelledby="team-title">
+    <div class="container">
+      <SectionHeading
+        overline="Equipe"
+        title="Os profissionais por trás do seu cuidado"
+        subtitle="Nossa equipe é formada por médicos com sólida formação e compromisso genuíno com cada paciente. Aqui você sempre sabe quem está te atendendo."
+        center={true}
+      />
+      <div class="grid-3">
+        {[1, 2, 3].map(() => (
+          <div class="team-card">
+            <div class="team-card__avatar" aria-hidden="true">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
+              </svg>
+            </div>
+            <div class="team-card__info">
+              <p class="team-card__name placeholder-text">Dr(a). A confirmar</p>
+              <p class="team-card__specialty placeholder-text">Especialidade a confirmar</p>
+              <p class="team-card__crm placeholder-text">CRM: a preencher</p>
+            </div>
+          </div>
+        ))}
+      </div>
+      <p class="team-note">Os dados completos de cada profissional (nome, CRM, RQE e especialidade) serão publicados conforme exigido pela Resolução CFM nº 2.336/2023.</p>
+      <div class="team-cta">
+        <a href="/equipe" class="btn btn-secondary">Ver página completa da equipe</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Nossa Estrutura -->
+  <section class="section section--alt" aria-labelledby="structure-title">
+    <div class="container">
+      <SectionHeading overline="Estrutura" title="Um ambiente preparado para o seu conforto" center={true} />
+      <p class="structure-text placeholder-text">[ Descrição dos espaços: número de consultórios, sala de espera, equipamentos disponíveis, acessibilidade e estacionamento — a preencher com informações reais da clínica. ]</p>
+      <div class="structure-gallery" aria-label="Galeria de fotos da clínica">
+        {[1, 2, 3].map(() => (
+          <div class="structure-gallery__item" aria-hidden="true">
+            <div class="structure-gallery__placeholder"></div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CTABanner
+    title="Venha nos conhecer"
+    text="Estamos prontos para receber você com o cuidado que você merece."
+    primaryLabel="Agendar minha primeira consulta"
+    primaryHref="/contato"
+  />
+
+</Base>
+
+<style>
+  .about-text { display: flex; flex-direction: column; gap: var(--space-5); }
+  .about-placeholder {
+    background: var(--color-gray-100);
+    border-radius: var(--radius-md);
+    padding: var(--space-4);
+    font-size: var(--text-body-sm);
+  }
+  .about-image__placeholder {
+    width: 100%;
+    min-height: 380px;
+    background: var(--gradient-soft);
+    border-radius: var(--radius-xl);
+    border: 2px dashed var(--color-gray-400);
+  }
+  /* MVV */
+  .mvv-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-6);
+  }
+  .mvv-card {
+    background: var(--color-white);
+    border-radius: var(--radius-lg);
+    padding: var(--space-8) var(--space-6);
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+  .mvv-card__icon {
+    width: 52px;
+    height: 52px;
+    background: var(--color-primary-light);
+    border-radius: var(--radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-primary);
+  }
+  .mvv-card__label {
+    font-size: var(--text-h4);
+    font-weight: var(--font-semibold);
+    color: var(--color-primary);
+  }
+  .mvv-card p, .mvv-card ul { font-size: var(--text-body); color: var(--color-gray-600); line-height: var(--leading-relaxed); }
+  .mvv-values { display: flex; flex-direction: column; gap: var(--space-2); padding-left: 0; }
+  .mvv-values li { list-style: none; }
+  /* Team */
+  .team-card {
+    background: var(--color-gray-100);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: var(--space-4);
+  }
+  .team-card__avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: var(--radius-full);
+    background: var(--color-gray-400);
+    opacity: 0.4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-white);
+  }
+  .team-card__name { font-weight: var(--font-semibold); font-size: var(--text-body); }
+  .team-card__specialty { font-size: var(--text-body-sm); }
+  .team-card__crm { font-size: var(--text-caption); }
+  .team-note {
+    text-align: center;
+    margin-top: var(--space-6);
+    font-size: var(--text-body-sm);
+    color: var(--color-gray-600);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .team-cta { text-align: center; margin-top: var(--space-6); }
+  /* Structure */
+  .structure-text {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto var(--space-10);
+    background: var(--color-white);
+    padding: var(--space-6);
+    border-radius: var(--radius-md);
+  }
+  .structure-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: var(--space-4);
+  }
+  .structure-gallery__placeholder {
+    width: 100%;
+    min-height: 200px;
+    background: var(--color-white);
+    border: 2px dashed var(--color-gray-400);
+    border-radius: var(--radius-lg);
+  }
+</style>

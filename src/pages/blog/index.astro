@@ -1,0 +1,67 @@
+---
+import Base from '../../layouts/Base.astro';
+import PageHero from '../../components/PageHero.astro';
+import CTABanner from '../../components/CTABanner.astro';
+---
+
+<Base
+  title="Blog — Clínica Teste Storage | Saúde e Bem-estar"
+  description="Artigos educativos sobre saúde, prevenção e bem-estar da Clínica Teste Storage."
+>
+  <PageHero
+    overline="Blog"
+    title="Saúde com informação confiável"
+    subtitle="Conteúdo educativo sobre prevenção, qualidade de vida e saúde — baseado em evidências e em linguagem acessível."
+  />
+
+  <section class="section">
+    <div class="container">
+      <div class="blog-coming-soon">
+        <div class="blog-coming-soon__icon" aria-hidden="true">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+            <polyline points="14 2 14 8 20 8"/>
+            <line x1="16" y1="13" x2="8" y2="13"/>
+            <line x1="16" y1="17" x2="8" y2="17"/>
+            <polyline points="10 9 9 9 8 9"/>
+          </svg>
+        </div>
+        <h2>Em breve: conteúdo que educa e empodera</h2>
+        <p>Estamos preparando artigos sobre prevenção, check-up, saúde cardiovascular, diabetes, bem-estar e muito mais — sempre com base em evidências científicas e em linguagem acessível.</p>
+        <p>Seja o primeiro a saber quando publicarmos. Acompanhe nossas redes sociais ou agende uma consulta para conversar com nossa equipe.</p>
+        <a href="/contato" class="btn btn-primary">Fale com nossa equipe</a>
+      </div>
+    </div>
+  </section>
+
+  <CTABanner
+    title="Prefere uma conversa direta?"
+    text="Tire suas dúvidas de saúde diretamente com nossos profissionais. Agende uma consulta."
+    primaryLabel="Agendar Consulta"
+    primaryHref="/contato"
+  />
+</Base>
+
+<style>
+  .blog-coming-soon {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-6);
+  }
+  .blog-coming-soon__icon {
+    width: 96px;
+    height: 96px;
+    border-radius: var(--radius-full);
+    background: var(--color-primary-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-primary);
+  }
+  .blog-coming-soon h2 { font-family: var(--font-display); font-size: var(--text-h2); color: var(--color-gray-900); }
+  .blog-coming-soon p { font-size: var(--text-body-lg); color: var(--color-gray-600); line-height: var(--leading-loose); }
+</style>

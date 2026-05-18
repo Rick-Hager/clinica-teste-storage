@@ -1,0 +1,239 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHero from '../components/PageHero.astro';
+---
+
+<Base
+  title="Contato e Agendamento — Clínica Teste Storage | São Paulo"
+  description="Entre em contato com a Clínica Teste Storage. Agende sua consulta pelo site, WhatsApp ou telefone. Estamos em São Paulo."
+>
+  <PageHero
+    overline="Fale com a gente"
+    title="Estamos prontos para atender você"
+    subtitle="Escolha o canal de contato mais conveniente e nossa equipe responderá com agilidade."
+  />
+
+  <section class="section">
+    <div class="container">
+
+      <!-- Canais de contato -->
+      <div class="contact-channels">
+        <div class="channel-card">
+          <div class="channel-card__icon" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+          </div>
+          <h2 class="channel-card__title">WhatsApp</h2>
+          <p class="channel-card__desc">Para agendamentos, dúvidas rápidas e confirmações.</p>
+          <p class="channel-card__detail"><strong>Horário:</strong> <span class="placeholder-text">A preencher</span></p>
+          <a href="https://wa.me/5511999999999?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20consulta." class="btn btn-whatsapp" target="_blank" rel="noopener">Chamar no WhatsApp</a>
+        </div>
+
+        <div class="channel-card">
+          <div class="channel-card__icon" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.15 13.5 19.79 19.79 0 0 1 1.08 4.82 2 2 0 0 1 3.08 2.65h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 10a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </div>
+          <h2 class="channel-card__title">Telefone</h2>
+          <p class="channel-card__desc">Para quem prefere ligar.</p>
+          <p class="channel-card__detail"><strong>Número:</strong> <span class="placeholder-text">A preencher</span></p>
+          <p class="channel-card__detail"><strong>Horário:</strong> <span class="placeholder-text">A preencher</span></p>
+          <a href="tel:+5511999999999" class="btn btn-secondary">Ligar agora</a>
+        </div>
+
+        <div class="channel-card">
+          <div class="channel-card__icon" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <h2 class="channel-card__title">E-mail</h2>
+          <p class="channel-card__desc">Para assuntos não urgentes e documentações.</p>
+          <p class="channel-card__detail"><strong>E-mail:</strong> <span class="placeholder-text">A preencher</span></p>
+          <p class="channel-card__detail">Respondemos em até 1 dia útil.</p>
+          <a href="mailto:contato@clinicatestestorage.com.br" class="btn btn-secondary">Enviar e-mail</a>
+        </div>
+      </div>
+
+      <!-- Formulário de contato -->
+      <div class="contact-form-section">
+        <h2 class="contact-form-title">Envie uma mensagem</h2>
+        <p class="contact-form-subtitle">Preencha o formulário abaixo e nossa equipe entrará em contato em breve.</p>
+
+        <form class="contact-form" id="contact-form" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label required" for="name">Nome completo</label>
+              <input class="form-input" type="text" id="name" name="name" placeholder="Seu nome completo" required autocomplete="name" />
+            </div>
+            <div class="form-group">
+              <label class="form-label required" for="phone">Telefone / WhatsApp</label>
+              <input class="form-input" type="tel" id="phone" name="phone" placeholder="(11) 99999-9999" required autocomplete="tel" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="email">E-mail</label>
+            <input class="form-input" type="email" id="email" name="email" placeholder="seu@email.com" autocomplete="email" />
+          </div>
+          <div class="form-group">
+            <label class="form-label required" for="subject">Assunto</label>
+            <select class="form-select" id="subject" name="subject" required>
+              <option value="" disabled selected>Selecione um assunto</option>
+              <option value="agendamento">Agendamento</option>
+              <option value="servico">Dúvida sobre serviço</option>
+              <option value="convenio">Informações de convênio</option>
+              <option value="outro">Outro</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label required" for="message">Mensagem</label>
+            <textarea class="form-textarea" id="message" name="message" placeholder="Como podemos ajudar?" required></textarea>
+          </div>
+          <div class="form-checkbox">
+            <input type="checkbox" id="lgpd" name="lgpd" required />
+            <label for="lgpd">Concordo com a <a href="/privacidade" class="form-link">Política de Privacidade</a> e autorizo o uso dos meus dados para retorno de contato.</label>
+          </div>
+          <button type="submit" class="btn btn-primary btn-lg" id="submit-btn">Enviar mensagem</button>
+        </form>
+
+        <div class="form-success" id="form-success" aria-live="polite" hidden>
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          <p><strong>Mensagem recebida!</strong> Nossa equipe entrará em contato em breve. Se precisar de resposta mais rápida, chame pelo WhatsApp.</p>
+        </div>
+      </div>
+
+      <!-- Localização -->
+      <div class="location-section">
+        <h2>Onde estamos</h2>
+        <div class="location-grid">
+          <div class="location-info">
+            <div class="location-item">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <div>
+                <strong>Endereço</strong>
+                <p class="placeholder-text">A preencher — endereço completo com CEP</p>
+              </div>
+            </div>
+            <div class="location-item">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              <div>
+                <strong>Horários de funcionamento</strong>
+                <p class="placeholder-text">A preencher — dias e horários de atendimento</p>
+              </div>
+            </div>
+            <div class="location-item">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+              <div>
+                <strong>Como chegar</strong>
+                <p class="placeholder-text">A preencher — referências de transporte público e estacionamento próximo</p>
+              </div>
+            </div>
+          </div>
+          <div class="location-map" aria-label="Mapa da localização (a incorporar após definição do endereço)">
+            <div class="location-map__placeholder">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <p>Mapa será incorporado após confirmação do endereço</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</Base>
+
+<style>
+  /* Channels */
+  .contact-channels {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: var(--space-6);
+    margin-bottom: var(--space-16);
+  }
+  .channel-card {
+    background: var(--color-white);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+    box-shadow: var(--shadow-md);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+  .channel-card__icon {
+    width: 56px;
+    height: 56px;
+    border-radius: var(--radius-full);
+    background: var(--color-secondary-light);
+    color: var(--color-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .channel-card__title { font-size: var(--text-h4); font-weight: var(--font-semibold); }
+  .channel-card__desc { font-size: var(--text-body-sm); color: var(--color-gray-600); }
+  .channel-card__detail { font-size: var(--text-body-sm); color: var(--color-gray-600); }
+  .channel-card .btn { align-self: flex-start; margin-top: auto; }
+
+  /* Form */
+  .contact-form-section {
+    max-width: 720px;
+    margin: 0 auto var(--space-16);
+  }
+  .contact-form-title { font-family: var(--font-display); font-size: var(--text-h2); color: var(--color-gray-900); margin-bottom: var(--space-3); }
+  .contact-form-subtitle { color: var(--color-gray-600); margin-bottom: var(--space-8); }
+  .contact-form { display: flex; flex-direction: column; gap: var(--space-5); }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-5); }
+  .form-link { color: var(--color-primary); text-decoration: underline; }
+  .form-success {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+    background: var(--color-success-light);
+    border-left: 4px solid var(--color-success);
+    border-radius: var(--radius-md);
+    padding: var(--space-5) var(--space-6);
+    color: var(--color-gray-900);
+    margin-top: var(--space-4);
+  }
+  .form-success svg { color: var(--color-success); flex-shrink: 0; }
+
+  /* Location */
+  .location-section h2 { font-family: var(--font-display); font-size: var(--text-h2); color: var(--color-gray-900); margin-bottom: var(--space-8); }
+  .location-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-8); align-items: flex-start; }
+  .location-info { display: flex; flex-direction: column; gap: var(--space-6); }
+  .location-item { display: flex; gap: var(--space-4); align-items: flex-start; }
+  .location-item svg { flex-shrink: 0; color: var(--color-primary); margin-top: 2px; }
+  .location-item strong { display: block; font-weight: var(--font-semibold); margin-bottom: var(--space-1); }
+  .location-item p { font-size: var(--text-body-sm); color: var(--color-gray-400); font-style: italic; }
+  .location-map__placeholder {
+    min-height: 280px;
+    background: var(--color-gray-100);
+    border-radius: var(--radius-lg);
+    border: 2px dashed var(--color-gray-400);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-3);
+    color: var(--color-gray-400);
+  }
+  .location-map__placeholder p { font-size: var(--text-body-sm); font-style: italic; text-align: center; padding: 0 var(--space-6); }
+
+  @media (max-width: 768px) {
+    .form-row { grid-template-columns: 1fr; }
+    .location-grid { grid-template-columns: 1fr; }
+  }
+</style>
+
+<script>
+  const form = document.getElementById('contact-form');
+  const successMsg = document.getElementById('form-success');
+  const submitBtn = document.getElementById('submit-btn');
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    submitBtn.textContent = 'Enviando...';
+    submitBtn.disabled = true;
+    // Simulação de envio — integrar com serviço de formulário (ex.: Formspree, EmailJS)
+    setTimeout(() => {
+      form.hidden = true;
+      successMsg.hidden = false;
+    }, 800);
+  });
+</script>

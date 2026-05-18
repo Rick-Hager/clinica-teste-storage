@@ -1,0 +1,54 @@
+---
+export interface Props {
+  icon: string;
+  title: string;
+  text: string;
+}
+const { icon, title, text } = Astro.props;
+---
+<div class="feature-card">
+  <div class="feature-card__icon" aria-hidden="true">
+    <Fragment set:html={icon} />
+  </div>
+  <h3 class="feature-card__title">{title}</h3>
+  <p class="feature-card__text">{text}</p>
+</div>
+
+<style>
+  .feature-card {
+    background: var(--color-white);
+    border-radius: var(--radius-lg);
+    padding: var(--space-8) var(--space-6);
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+    transition:
+      box-shadow var(--duration-normal) var(--ease-out),
+      transform  var(--duration-normal) var(--ease-out);
+  }
+  .feature-card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+  }
+  .feature-card__icon {
+    width: 64px;
+    height: 64px;
+    background-color: var(--color-primary-light);
+    border-radius: var(--radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto var(--space-5);
+    color: var(--color-primary);
+  }
+  .feature-card__title {
+    font-size: var(--text-h4);
+    font-weight: var(--font-semibold);
+    color: var(--color-gray-900);
+    margin-bottom: var(--space-3);
+  }
+  .feature-card__text {
+    font-size: var(--text-body);
+    color: var(--color-gray-600);
+    line-height: var(--leading-relaxed);
+  }
+</style>

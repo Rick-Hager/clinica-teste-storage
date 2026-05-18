@@ -1,0 +1,64 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHero from '../components/PageHero.astro';
+---
+
+<Base
+  title="Termos de Uso — Clínica Teste Storage"
+  description="Termos de Uso do site da Clínica Teste Storage."
+>
+  <PageHero
+    overline="Legal"
+    title="Termos de Uso"
+  />
+
+  <section class="section">
+    <div class="container">
+      <div class="legal-content">
+
+        <div class="notice-banner">
+          <strong>Documento em elaboração:</strong> Este documento está sendo preparado pelo responsável jurídico da clínica. A versão completa será publicada antes do lançamento oficial do site.
+        </div>
+
+        <p class="legal-updated"><strong>Última atualização:</strong> <span class="placeholder-text">_____</span></p>
+
+        <h2>1. Aceitação dos Termos</h2>
+        <p>Ao acessar e utilizar este site, você concorda com estes Termos de Uso. Caso não concorde com alguma das condições, recomendamos que não utilize o site.</p>
+
+        <h2>2. Uso do Site</h2>
+        <p>Este site tem caráter informativo e destina-se a apresentar os serviços da Clínica Teste Storage, fornecer informações de saúde de caráter geral e possibilitar o contato entre visitantes e a clínica.</p>
+        <p>É vedado o uso deste site para fins ilícitos, prejudiciais a terceiros ou contrários à legislação brasileira vigente.</p>
+
+        <h2>3. Informações de Saúde</h2>
+        <p>O conteúdo informativo publicado neste site — artigos, orientações e informações sobre condições de saúde — tem caráter educativo e não substitui a consulta médica presencial. Sempre consulte um profissional de saúde habilitado para diagnóstico e tratamento.</p>
+
+        <h2>4. Propriedade Intelectual</h2>
+        <p>Todo o conteúdo deste site (textos, imagens, logotipo, identidade visual) é propriedade da Clínica Teste Storage ou de seus respectivos detentores de direitos, sendo vedada a reprodução sem autorização expressa.</p>
+
+        <h2>5. Limitação de Responsabilidade</h2>
+        <p>A Clínica Teste Storage não se responsabiliza por danos decorrentes do uso inadequado das informações disponibilizadas neste site. As informações podem ser atualizadas sem aviso prévio.</p>
+
+        <h2>6. Links Externos</h2>
+        <p>Este site pode conter links para sites externos. A Clínica Teste Storage não tem controle sobre o conteúdo desses sites e não se responsabiliza por seu conteúdo ou práticas de privacidade.</p>
+
+        <h2>7. Lei Aplicável</h2>
+        <p>Estes Termos de Uso são regidos pelas leis da República Federativa do Brasil. Fica eleito o foro da comarca de São Paulo para dirimir quaisquer controvérsias.</p>
+
+        <div class="legal-contact">
+          <h3>Dúvidas sobre os termos?</h3>
+          <p>Entre em contato com nossa equipe pelo <a href="/contato">formulário de contato</a> ou pelo e-mail <span class="placeholder-text">_____</span>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .legal-content { max-width: 760px; margin: 0 auto; display: flex; flex-direction: column; gap: var(--space-6); }
+  .legal-updated { font-size: var(--text-body-sm); color: var(--color-gray-600); }
+  .legal-content h2 { font-family: var(--font-display); font-size: var(--text-h3); color: var(--color-primary); margin-top: var(--space-4); margin-bottom: var(--space-2); }
+  .legal-content p { color: var(--color-gray-600); line-height: var(--leading-relaxed); }
+  .legal-contact { background: var(--color-gray-100); border-radius: var(--radius-lg); padding: var(--space-6); margin-top: var(--space-6); }
+  .legal-contact h3 { font-size: var(--text-h4); font-weight: var(--font-semibold); margin-bottom: var(--space-2); }
+  .legal-contact a { color: var(--color-primary); text-decoration: underline; }
+</style>

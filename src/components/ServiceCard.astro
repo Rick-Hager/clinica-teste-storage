@@ -1,0 +1,78 @@
+---
+export interface Props {
+  icon: string;
+  title: string;
+  text: string;
+  href: string;
+}
+const { icon, title, text, href } = Astro.props;
+---
+<article class="service-card">
+  <div class="service-card__icon" aria-hidden="true">
+    <Fragment set:html={icon} />
+  </div>
+  <h3 class="service-card__title">{title}</h3>
+  <p class="service-card__text">{text}</p>
+  <a href={href} class="service-card__link" aria-label={`Saiba mais sobre ${title}`}>
+    Ver detalhes
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <line x1="5" y1="12" x2="19" y2="12"/>
+      <polyline points="12 5 19 12 12 19"/>
+    </svg>
+  </a>
+</article>
+
+<style>
+  .service-card {
+    background: var(--color-white);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+    box-shadow: var(--shadow-md);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    border-top: 3px solid var(--color-secondary);
+    transition:
+      box-shadow var(--duration-normal) var(--ease-out),
+      transform  var(--duration-normal) var(--ease-out);
+  }
+  .service-card:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-2px);
+  }
+  .service-card__icon {
+    width: 48px;
+    height: 48px;
+    background-color: var(--color-secondary-light);
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-secondary);
+    flex-shrink: 0;
+  }
+  .service-card__title {
+    font-size: var(--text-h4);
+    font-weight: var(--font-semibold);
+    color: var(--color-gray-900);
+  }
+  .service-card__text {
+    font-size: var(--text-body);
+    color: var(--color-gray-600);
+    line-height: var(--leading-relaxed);
+    flex: 1;
+  }
+  .service-card__link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-size: var(--text-body-sm);
+    font-weight: var(--font-semibold);
+    color: var(--color-secondary);
+    text-decoration: none;
+    transition: gap var(--duration-fast) var(--ease-out), color var(--duration-fast) var(--ease-out);
+    margin-top: auto;
+  }
+  .service-card__link:hover { gap: var(--space-3); color: var(--color-secondary-hover); }
+  .service-card__link:focus-visible { outline: 2px solid var(--color-primary); outline-offset: 2px; border-radius: 2px; }
+</style>

@@ -1,0 +1,62 @@
+---
+export interface Props {
+  number: number;
+  icon: string;
+  title: string;
+  text: string;
+}
+const { number, icon, title, text } = Astro.props;
+---
+<div class="step-card">
+  <div class="step-card__head">
+    <span class="step-card__number" aria-hidden="true">{String(number).padStart(2, '0')}</span>
+    <div class="step-card__icon" aria-hidden="true">
+      <Fragment set:html={icon} />
+    </div>
+  </div>
+  <h3 class="step-card__title">{title}</h3>
+  <p class="step-card__text">{text}</p>
+</div>
+
+<style>
+  .step-card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+  .step-card__head {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+  }
+  .step-card__number {
+    font-family: var(--font-display);
+    font-size: 2.5rem;
+    font-weight: var(--font-bold);
+    color: var(--color-secondary);
+    line-height: 1;
+    opacity: 0.35;
+    min-width: 52px;
+  }
+  .step-card__icon {
+    width: 48px;
+    height: 48px;
+    background-color: var(--color-secondary-light);
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-secondary);
+    flex-shrink: 0;
+  }
+  .step-card__title {
+    font-size: var(--text-h4);
+    font-weight: var(--font-semibold);
+    color: var(--color-gray-900);
+  }
+  .step-card__text {
+    font-size: var(--text-body);
+    color: var(--color-gray-600);
+    line-height: var(--leading-relaxed);
+  }
+</style>
